@@ -1,0 +1,20 @@
+{
+    "name": "vlc",
+    "url": "https://github.com/brightfyregit/Friday-Night-Funkin-Mp4-Video-Support/",
+    "license": "MIT",
+    "tags": [
+        "cross",
+        "useless"
+    ],
+    "description": "Native video support for OpenFL & Flixel.",
+    "version": "1.0.0",
+    "releasenote": "Initial release, everything is working correctly.",
+    "contributors": [
+        "PolybiusProxy",
+        "datee",
+        "BrightFyre",
+        "GWebDev",
+        "CryBit"
+    ],
+    "dependencies": {}
+}
