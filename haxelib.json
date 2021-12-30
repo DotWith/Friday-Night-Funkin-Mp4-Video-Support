@@ -7,7 +7,7 @@
         "useless"
     ],
     "description": "Native video support for OpenFL & Flixel.",
-    "version": "1.0.0",
+    "version": "1.0.0-alpha",
     "releasenote": "Initial release, everything is working correctly.",
     "contributors": [
         "PolybiusProxy",
