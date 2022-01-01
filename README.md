@@ -4,9 +4,9 @@ Native video support for OpenFL & Flixel.
 
 ## How to use HxCodec
 
-Make sure to import MP4Handler.
+Make sure to import HxCodec.
 
 ```hx
-var video:MP4Handler = new MP4Handler();
-video.playVideo("your/video/path.mp4");
+var video = new HxCodec();
+video.play("your/video/path.mp4");
 ```
