@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <section if="cpp">
+        <assets path="plugins/" rename="" />
+        <assets path="dlls/" rename="" />
+    </section>
+</project>

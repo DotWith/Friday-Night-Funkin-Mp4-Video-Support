@@ -1,4 +1,4 @@
-package vlc;
+package hxCodec.vlc;
 
 #if cpp
 import cpp.NativeArray;
@@ -12,7 +12,7 @@ import openfl.display3D.textures.RectangleTexture;
 import openfl.errors.Error;
 import openfl.events.Event;
 import openfl.geom.Rectangle;
-import vlc.LibVLC;
+import hxCodec.vlc.LibVLC;
 
 /**
  * ...
@@ -51,7 +51,7 @@ class VlcBitmap extends Bitmap
 	public var onProgress:Void->Void;
 	public var onOpening:Void->Void;
 	public var onComplete:Void->Void;
-	public var onError:Void->Void;
+	public var onError:Dynamic->Void;
 
 	// ===================================================================================
 	// Declarations
@@ -146,6 +146,10 @@ class VlcBitmap extends Bitmap
 	public function play(?source:String)
 	{
 		libvlc.setRepeat(repeat);
+
+		// TODO
+		var hwAcceleration:Bool = true;
+		libvlc.useHWacceleration(hwAcceleration);
 
 		if (source != null)
 			libvlc.play(source);
@@ -243,7 +247,7 @@ class VlcBitmap extends Bitmap
 			if (untyped __cpp__('libvlc->flags[9]') == 1)
 			{
 				untyped __cpp__('libvlc->flags[9]=-1');
-				statusOnError();
+				statusOnError("File not found?");
 			}
 			if (untyped __cpp__('libvlc->flags[10]') == 1)
 			{
@@ -365,8 +369,8 @@ class VlcBitmap extends Bitmap
 				}
 				catch (e:Error)
 				{
-					trace("error: " + e);
-					throw new Error("render broke xd");
+					statusOnError(e);
+					throw new Error("The render has broke.");
 				}
 			}
 		}
@@ -472,12 +476,10 @@ class VlcBitmap extends Bitmap
 		// render();
 	}
 
-	function statusOnError()
+	function statusOnError(error:Dynamic)
 	{
-		trace("VLC ERROR - File not found?");
-
 		if (onError != null)
-			onError();
+			onError(error);
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////
@@ -548,7 +550,6 @@ class VlcBitmap extends Bitmap
 
 		while (!isPlaying && !isDisposed)
 		{
-			libvlc.dispose();
 			libvlc = null;
 		}
 	}

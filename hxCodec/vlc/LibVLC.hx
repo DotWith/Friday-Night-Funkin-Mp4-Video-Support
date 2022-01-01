@@ -1,4 +1,4 @@
-package vlc;
+package hxCodec.vlc;
 
 #if cpp
 import cpp.Pointer;
@@ -9,8 +9,7 @@ import cpp.UInt8;
  * ...
  * @author Tommy S
  */
-//
-@:buildXml('<include name="../../../../source/vlc/LibVLCBuild.xml" />')
+@:buildXml('<include name="./../../../hxCodec/vlc/LibVLCBuild.xml" />')
 @:include("LibVLC.h")
 @:unreflective
 @:keep
@@ -117,9 +116,4 @@ extern class LibVLC
 
 	@:native("flags")
 	public var flags:Array<Int>;
-
-	public inline function dispose():Void
-	{
-		// untyped __cpp__('::delete this');
-	}
 }

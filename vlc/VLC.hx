@@ -1,6 +1,0 @@
-package vlc;
-
-class VLC
-{
-    
-}

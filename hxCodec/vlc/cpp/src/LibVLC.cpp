@@ -144,7 +144,7 @@ void LibVLC::setPath(const char* path)
 	libVlcMediaPlayer = libvlc_media_player_new_from_media(libVlcMediaItem);
 	libvlc_media_parse(libVlcMediaItem);
 	libvlc_media_release(libVlcMediaItem);
-	useHWacceleration(true);
+	//useHWacceleration(true);
 
 	if (libVlcMediaItem!=nullptr)
 	{
