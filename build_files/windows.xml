@@ -1,8 +1,6 @@
 <xml>
 	<set name='CPP_DIR' value='${haxelib:hxCodec}/vlc' />
 
-	<echo value="Using hxCodec from: ${CPP_DIR}" />
-
 	<section>
 		<files id="haxe">
 			<compilerflag value="-I${CPP_DIR}/include" />

@@ -11,36 +11,6 @@ using namespace std;
 
 LibVLC::LibVLC(void)
 {
-	char const *Args[] =
-	{
-		//"--aout", "amem",
-		"--drop-late-frames",
-		"--ignore-config",
-		"--intf",
-		"dummy",
-		"--no-disable-screensaver",
-		"--no-snapshot-preview",
-		"--no-stats",
-		"--no-video-title-show",
-		"--text-renderer",
-		"dummy",
-		"--quiet",
-#if PLATFORM_LINUX
-		"--no-xlib",
-#endif
-
-#if DEBUG
-		"--verbose=2"
-#else
-#endif
-		//"--no-xlib", //no xlib if linux
-		//"--vout", "vmem"
-		//"--avcodec-hw=dxva2",
-		//"--verbose=2"
-	};
-
-	int Argc = sizeof(Args) / sizeof(*Args);
-	// libVlcInstance = libvlc_new(Argc, Args);
 	libVlcInstance = libvlc_new(0, NULL);
 }
 
@@ -89,13 +59,6 @@ static void unlock(void *data, void *id, void *const *p_pixels)
 	ctx->imagemutex.unlock();
 }
 
-static void display(void *opaque, void *picture)
-{
-	// t_ctx *ctx = (t_ctx *)data;
-	// self->flags[15]=1;
-	// std::cout << "display " << self << std::endl;
-}
-
 static unsigned format_setup(void **opaque, char *chroma, unsigned *width, unsigned *height, unsigned *pitches, unsigned *lines)
 {
 	// LibVLC* self = reinterpret_cast<LibVLC*>( opaque );
@@ -118,10 +81,6 @@ static unsigned format_setup(void **opaque, char *chroma, unsigned *width, unsig
 	callback->pixeldata = new unsigned char[_frame];
 	callback->pixeldata2 = new unsigned char[_frame];
 	return 1;
-}
-
-static void format_cleanup(void *opaque)
-{
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -171,8 +130,8 @@ void LibVLC::play(const char *path)
 	ctx.pixeldata = 0;
 	ctx.pixeldata2 = 0;
 
-	libvlc_video_set_format_callbacks(libVlcMediaPlayer, format_setup, format_cleanup);
-	libvlc_video_set_callbacks(libVlcMediaPlayer, lock, unlock, display, &ctx);
+	libvlc_video_set_format_callbacks(libVlcMediaPlayer, format_setup, nullptr);
+	libvlc_video_set_callbacks(libVlcMediaPlayer, lock, unlock, nullptr, &ctx);
 	eventManager = libvlc_media_player_event_manager(libVlcMediaPlayer);
 	registerEvents();
 	libvlc_media_player_play(libVlcMediaPlayer);
@@ -181,7 +140,6 @@ void LibVLC::play(const char *path)
 
 void LibVLC::playInWindow()
 {
-	// libvlc_video_set_format_callbacks(libVlcMediaPlayer, format_setup, format_cleanup);
 	ctx.pixeldata = 0;
 	ctx.pixeldata2 = 0;
 	eventManager = libvlc_media_player_event_manager(libVlcMediaPlayer);
@@ -195,7 +153,6 @@ void LibVLC::playInWindow(const char *path)
 	setPath(path);
 	ctx.pixeldata = 0;
 	ctx.pixeldata2 = 0;
-	// libvlc_video_set_format_callbacks(libVlcMediaPlayer, format_setup, format_cleanup);
 	eventManager = libvlc_media_player_event_manager(libVlcMediaPlayer);
 	registerEvents();
 	libvlc_media_player_play(libVlcMediaPlayer);
@@ -255,18 +212,6 @@ int LibVLC::isPlaying()
 void LibVLC::setRepeat(int numRepeats)
 {
 	repeat = numRepeats;
-	/*	if (libVlcMediaItem!=nullptr)
-		{
-			std::string sa = "input-repeat=";
-			sa += std::to_string(repeat);
-			//libvlc_media_add_option(libVlcMediaItem, sa.c_str() );
-			if (repeat==-1)
-				libvlc_media_add_option(libVlcMediaItem, "input-repeat=-1" );
-			else if (repeat==0)
-				libvlc_media_add_option(libVlcMediaItem, "input-repeat=0" );
-			//std::cout << "Num repeats: " << sa << std::endl;
-		}
-		*/
 }
 
 int LibVLC::getRepeat()
@@ -283,8 +228,6 @@ void LibVLC::setVolume(float volume)
 {
 	if (volume > 100)
 		volume = 100.0;
-
-	// vol = volume;
 
 	if (libVlcMediaPlayer != NULL && libVlcMediaPlayer != nullptr)
 	{
