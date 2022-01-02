@@ -114,7 +114,7 @@ class HxCodec extends VlcBitmap
 		var pDir = "";
 
 		if (fileName.indexOf(":") == -1) // Not a path
-			pDir = "file:///" + #if sys Sys.getCwd() + #end "/";
+			pDir = "file:///" + Sys.getCwd() + "/";
 		else if (fileName.indexOf("file://") == -1 || fileName.indexOf("http") == -1) // C:, D: etc? ..missing "file:///" ?
 			pDir = "file:///";
 
