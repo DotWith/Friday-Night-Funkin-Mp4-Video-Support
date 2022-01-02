@@ -4,7 +4,6 @@ package hxCodec;
 import openfl.events.Event;
 import openfl.Lib;
 #end
-
 #if flixel
 import flixel.FlxG;
 #end
@@ -102,12 +101,11 @@ class HxCodec extends hxCodec.vlc.VlcBitmap
 	 * @param repeat Repeat the video.
 	 */
 	/*public override function play(?url:String, ?repeat:Int = -1)
-	{
-		super.play(checkFile(url));
+		{
+			super.play(checkFile(url));
 
-		this.repeat = repeat;
+			this.repeat = repeat;
 	}*/
-
 	public override function play(?source:String)
 	{
 		super.play(checkFile(source));
@@ -120,7 +118,7 @@ class HxCodec extends hxCodec.vlc.VlcBitmap
 		if (fileName.indexOf(":") == -1) // Not a path
 			pDir = "file:///" + #if sys Sys.getCwd() + #end "/";
 		else if (fileName.indexOf("file://") == -1 || fileName.indexOf("http") == -1) // C:, D: etc? ..missing "file:///" ?
-		pDir = "file:///";
+			pDir = "file:///";
 
 		return pDir + fileName;
 	}

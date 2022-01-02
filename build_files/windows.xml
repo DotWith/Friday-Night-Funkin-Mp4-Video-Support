@@ -1,0 +1,24 @@
+<xml>
+	<set name='CPP_DIR' value='${haxelib:hxCodec}/hxCodec/vlc/cpp' />
+
+	<echo value="Using hxCodec from: ${CPP_DIR}" />
+
+	<section>
+		<files id="haxe">
+			<compilerflag value="-I${CPP_DIR}/include" />
+			<compilerflag value="-I${CPP_DIR}/src" />
+		</files>
+
+		<!-- WINDOWS -->
+		<target id="haxe" tool="linker" toolid="exe" if="windows">
+			<lib name="${CPP_DIR}/lib/libvlc.lib" />
+			<lib name="${CPP_DIR}/lib/libvlccore.lib" />
+		</target>
+
+		<!-- LINUX -->
+		<!--<target id="haxe" tool="linker" toolid="exe" if="linux">
+			<lib name='${CPP_DIR}/lib/linux/libvlc.so' />
+			<lib name='${CPP_DIR}/lib/linux/libvlccore.so.7' />
+		</target>-->
+	</section>
+</xml>

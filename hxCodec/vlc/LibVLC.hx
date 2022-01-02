@@ -9,22 +9,7 @@ import cpp.UInt8;
  * ...
  * @author Tommy S
  */
-@:buildXml("
-<set name='CPP_DIR' value='${this_dir}/cpp' />
-
-<files id='haxe'>
-	<compilervalue name='-I' value='${CPP_DIR}/include/' />
-	<compilervalue name='-I' value='${CPP_DIR}/src/' />
-</files>
-
-<target id='haxe' tool='linker' toolid='exe'>
-	<lib name='${CPP_DIR}/lib/libvlc.lib' if='windows'/>
-	<lib name='${CPP_DIR}/lib/libvlccore.lib' if='windows'/>
-
-	<lib name='${CPP_DIR}/lib/linux/libvlc.so' if='linux'/>
-	<lib name='${CPP_DIR}/lib/linux/libvlccore.so.7' if='linux'/>
-</target>
-")
+@:buildXml("<include name='${haxelib:hxCodec}/build_files/windows.xml'/>")
 @:include("LibVLC.h")
 @:unreflective
 @:keep
