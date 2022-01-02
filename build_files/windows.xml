@@ -3,8 +3,8 @@
 
 	<section>
 		<files id="haxe">
-			<compilerflag value="-I${CPP_DIR}/include" />
-			<compilerflag value="-I${CPP_DIR}/src" />
+			<compilerflag value="-I${CPP_DIR}/include/" />
+			<compilerflag value="-I${CPP_DIR}/src/" />
 		</files>
 
 		<target id="haxe" tool="linker" toolid="exe" if="windows">

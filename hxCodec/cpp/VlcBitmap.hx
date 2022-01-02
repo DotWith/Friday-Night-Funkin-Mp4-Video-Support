@@ -1,4 +1,4 @@
-package hxCodec;
+package hxCodec.cpp;
 
 #if cpp
 import cpp.NativeArray;
