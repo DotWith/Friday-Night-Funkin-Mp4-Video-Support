@@ -148,8 +148,8 @@ class VlcBitmap extends Bitmap
 	{
 		libvlc.setRepeat(repeat);
 
-		// TODO
-		var hwAcceleration:Bool = true;
+		@:privateAccess
+		var hwAcceleration = lime.app.Application.current.window.__attributes.context.hardware;
 		libvlc.useHWacceleration(hwAcceleration);
 
 		if (source != null)
