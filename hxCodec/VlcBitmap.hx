@@ -4,7 +4,6 @@ package hxCodec;
 import cpp.NativeArray;
 import cpp.UInt8;
 #end
-import flixel.FlxG;
 import openfl.Lib;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
@@ -97,11 +96,6 @@ class VlcBitmap extends Bitmap
 		init();
 	}
 
-	function mThread()
-	{
-		init();
-	}
-
 	/////////////////////////////////////////////////////////////////////////////////////
 
 	function init()
@@ -126,18 +120,26 @@ class VlcBitmap extends Bitmap
 
 	function getVideoWidth():Float
 	{
-		if (FlxG.stage.stageHeight / 9 < FlxG.stage.stageWidth / 16)
-			return FlxG.stage.stageHeight * (16 / 9);
+		#if openfl
+		if (Lib.current.stage.stageHeight / 9 < Lib.current.stage.stageWidth / 16)
+			return Lib.current.stage.stageHeight * (16 / 9);
 		else
-			return FlxG.stage.stageWidth;
+			return Lib.current.stage.stageWidth;
+		#else
+		return 1;
+		#end
 	}
 
 	function getVideoHeight():Float
 	{
-		if (FlxG.stage.stageHeight / 9 < FlxG.stage.stageWidth / 16)
-			return FlxG.stage.stageHeight;
+		#if openfl
+		if (Lib.current.stage.stageHeight / 9 < Lib.current.stage.stageWidth / 16)
+			return Lib.current.stage.stageHeight;
 		else
-			return FlxG.stage.stageWidth / (16 / 9);
+			return Lib.current.stage.stageWidth / (16 / 9);
+		#else
+		return 1;
+		#end
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////

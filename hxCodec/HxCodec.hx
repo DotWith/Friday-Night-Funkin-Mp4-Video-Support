@@ -8,7 +8,7 @@ import openfl.Lib;
 import flixel.FlxG;
 #end
 
-class HxCodec extends hxCodec.VlcBitmap
+class HxCodec extends VlcBitmap
 {
 	public var readyCallback:Void->Void;
 	public var finishCallback:Void->Void;
@@ -37,15 +37,14 @@ class HxCodec extends hxCodec.VlcBitmap
 
 		window.onFocusOut.add(() -> pause());
 		window.onFocusIn.add(() -> resume());
-
-		#if (openfl && flixel)
-		Lib.current.stage.addEventListener(Event.ENTER_FRAME, update);
 		#end
+
+		#if openfl
+		Lib.current.stage.addEventListener(Event.ENTER_FRAME, update);
 		#end
 	}
 
-	#if openfl
-	function update(e:Event)
+	function update(e)
 	{
 		#if flixel
 		if (FlxG.sound.muted || FlxG.sound.volume <= 0)
@@ -54,7 +53,6 @@ class HxCodec extends hxCodec.VlcBitmap
 			volume = FlxG.sound.volume + 0.4;
 		#end
 	}
-	#end
 
 	function onVLCVideoReady()
 	{
@@ -77,16 +75,16 @@ class HxCodec extends hxCodec.VlcBitmap
 		if (!isPlaying)
 			return;
 
-		#if (openfl && lime && flixel)
+		#if openfl
 		Lib.current.stage.removeEventListener(Event.ENTER_FRAME, update);
 		#end
 
 		dispose();
 
-		#if flixel
-		if (FlxG.game.contains(this))
+		#if openfl
+		if (Lib.current.contains(this))
 		{
-			FlxG.game.removeChild(this);
+			Lib.current.removeChild(this);
 
 			if (finishCallback != null)
 				finishCallback();

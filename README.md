@@ -1,6 +1,7 @@
 # HxCodec
 
 Native video support for OpenFL & Flixel.
+You should check out our [TODO list](https://github.com/brightfyregit/Friday-Night-Funkin-Mp4-Video-Support/projects/1)
 
 ## Credits
 
@@ -10,15 +11,14 @@ Native video support for OpenFL & Flixel.
 - [CryBit](https://github.com/CryBitDev) - fixing my shit lolololoolol
 - The contributors.
 
-## How to use HxCodec
+## What is HxCodec
 
-**Make sure to import HxCodec.**
+WIP
 
+## Examples
+
+Play a video
 ```hx
-import hxCodec.HxCodec;
-
-...
-
 var video = new HxCodec();
 video.play("your/video/path.mp4");
 ```
