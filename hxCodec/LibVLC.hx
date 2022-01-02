@@ -1,4 +1,4 @@
-package hxCodec.vlc;
+package hxCodec;
 
 #if cpp
 import cpp.Pointer;

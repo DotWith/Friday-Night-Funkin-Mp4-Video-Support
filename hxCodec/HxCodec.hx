@@ -8,7 +8,7 @@ import openfl.Lib;
 import flixel.FlxG;
 #end
 
-class HxCodec extends hxCodec.vlc.VlcBitmap
+class HxCodec extends hxCodec.VlcBitmap
 {
 	public var readyCallback:Void->Void;
 	public var finishCallback:Void->Void;
