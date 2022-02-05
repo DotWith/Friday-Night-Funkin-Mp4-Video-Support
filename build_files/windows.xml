@@ -7,7 +7,7 @@
 			<compilerflag value="-I${CPP_DIR}/src/" />
 		</files>
 
-		<target id="haxe" tool="linker" toolid="exe" if="windows">
+		<target id="haxe" tool="linker" toolid="exe" if="cpp">
 			<lib name="${CPP_DIR}/lib/libvlc.lib" />
 			<lib name="${CPP_DIR}/lib/libvlccore.lib" />
 		</target>

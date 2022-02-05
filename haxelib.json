@@ -7,7 +7,7 @@
         "video",
         "vlc"
     ],
-    "description": "Native video support for OpenFL & Flixel.",
+    "description": "Native video support for OpenFL.",
     "version": "1.0.0-alpha",
     "releasenote": "Initial release, everything is working correctly.",
     "contributors": [

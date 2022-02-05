@@ -32,8 +32,11 @@ import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import openfl.display3D.textures.RectangleTexture;
 import openfl.errors.Error;
-import openfl.events.Event;
+import flash.events.Event;
 import openfl.geom.Rectangle;
+#if desktop
+import flash.events.FocusEvent;
+#end
 
 /**
  * ...
@@ -108,23 +111,46 @@ class VlcBitmap extends Bitmap
 		this.width = width >= 0 ? getVideoWidth() : width;
 		this.height = height >= 0 ? getVideoHeight() : height;
 
-		init();
+		addEventListener(Event.ADDED_TO_STAGE, create);
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////
 
-	function init()
+	function create(_):Void
 	{
-		addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-	}
+		if (stage == null)
+			return;
 
-	function onAddedToStage(e:Event):Void
-	{
-		removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+		removeEventListener(Event.ADDED_TO_STAGE, create);
 
 		libvlc = LibVLC.create();
-		stage.addEventListener(Event.RESIZE, onResize);
-		stage.addEventListener(Event.ENTER_FRAME, vLoop);
+		addEventListener(Event.RESIZE, onResize);
+		addEventListener(Event.ENTER_FRAME, vLoop);
+
+		// Focus gained/lost monitoring
+		#if (desktop && openfl <= "4.0.0")
+		stage.addEventListener(FocusEvent.FOCUS_OUT, onFocusLost);
+		stage.addEventListener(FocusEvent.FOCUS_IN, onFocus);
+		#else
+		stage.addEventListener(Event.DEACTIVATE, onFocusLost);
+		stage.addEventListener(Event.ACTIVATE, onFocus);
+		#end
+	}
+
+	function onFocusLost(_):Void
+	{
+		if (!FlxG.autoPause)
+			return;
+
+		pause();
+	}
+
+	function onFocus(_):Void
+	{
+		if (!FlxG.autoPause)
+			return;
+
+		resume();
 	}
 
 	function onResize(e:Event)
@@ -163,9 +189,10 @@ class VlcBitmap extends Bitmap
 	{
 		libvlc.setRepeat(repeat);
 
-		@:privateAccess
+		// HW Acceleration is disabled, because it doesn't works so well (libVLC causes a crash)
+		/*@:privateAccess
 		var hwAcceleration = lime.app.Application.current.window.__attributes.context.hardware;
-		libvlc.useHWacceleration(hwAcceleration);
+		libvlc.useHWacceleration(hwAcceleration);*/
 
 		if (source != null)
 			libvlc.play(source);
@@ -485,11 +512,6 @@ class VlcBitmap extends Bitmap
 
 	function statusOnBackward()
 	{
-	}
-
-	function onDisplay()
-	{
-		// render();
 	}
 
 	function statusOnError(error:Dynamic)

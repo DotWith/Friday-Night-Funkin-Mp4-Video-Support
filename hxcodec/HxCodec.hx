@@ -23,10 +23,8 @@
 
 package hxcodec;
 
-#if openfl
-import openfl.events.Event;
-import openfl.Lib;
-#end
+import flash.events.Event;
+
 #if flixel
 import flixel.FlxG;
 #end
@@ -61,19 +59,10 @@ class HxCodec extends hxcodec.cpp.VlcBitmap
 		FlxG.addChildBelowMouse(this);
 		#end
 
-		#if lime
-		var window = lime.app.Application.current.window;
-
-		window.onFocusOut.add(() -> pause());
-		window.onFocusIn.add(() -> resume());
-		#end
-
-		#if openfl
-		Lib.current.stage.addEventListener(Event.ENTER_FRAME, update);
-		#end
+		addEventListener(Event.ENTER_FRAME, update);
 	}
 
-	function update(e)
+	function update(_)
 	{
 		#if flixel
 		if (FlxG.sound.muted || FlxG.sound.volume <= 0)
@@ -104,9 +93,7 @@ class HxCodec extends hxcodec.cpp.VlcBitmap
 		if (!isPlaying)
 			return;
 
-		#if openfl
-		Lib.current.stage.removeEventListener(Event.ENTER_FRAME, update);
-		#end
+		removeEventListener(Event.ENTER_FRAME, update);
 
 		dispose();
 
@@ -136,7 +123,7 @@ class HxCodec extends hxcodec.cpp.VlcBitmap
 	 * Receives the file path. Doesn't work on HTML5.
 	 * 
 	 * @param fileName 	The path of the video.
-	 * @return 			Example `file:///C:/The/Path/To/The/Game/assets/videos/video.mp4`
+	 * @return 			Example `file:///C:/your/video/path.mp4`
 	 */
 	@:noCompletion
 	function checkFile(fileName:String):String

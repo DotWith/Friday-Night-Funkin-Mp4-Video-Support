@@ -1,7 +1,10 @@
 # HxCodec
 
-Native video support for OpenFL & Flixel.
+Native video support for OpenFL.
 You should check out our [TODO list](https://github.com/brightfyregit/Friday-Night-Funkin-Mp4-Video-Support/projects/1)
+
+## Installation
+`haxelib git hxcodec https://github.com/DotWith/Friday-Night-Funkin-Mp4-Video-Support.git haxelib-test`
 
 ## Credits
 
