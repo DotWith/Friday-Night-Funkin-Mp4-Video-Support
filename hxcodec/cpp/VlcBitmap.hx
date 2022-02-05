@@ -140,7 +140,7 @@ class VlcBitmap extends Bitmap
 	function onFocusLost(_):Void
 	{
 		#if flixel
-		if (!FlxG.autoPause)
+		if (!flixel.FlxG.autoPause)
 			return;
 		#end
 
@@ -150,7 +150,7 @@ class VlcBitmap extends Bitmap
 	function onFocus(_):Void
 	{
 		#if flixel
-		if (!FlxG.autoPause)
+		if (!flixel.FlxG.autoPause)
 			return;
 		#end
 

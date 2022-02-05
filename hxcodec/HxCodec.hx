@@ -25,10 +25,6 @@ package hxcodec;
 
 import flash.events.Event;
 
-#if flixel
-import flixel.FlxG;
-#end
-
 class HxCodec extends hxcodec.cpp.VlcBitmap
 {
 	/**
@@ -56,7 +52,7 @@ class HxCodec extends hxcodec.cpp.VlcBitmap
 		onError = onVLCError;
 
 		#if flixel
-		FlxG.addChildBelowMouse(this);
+		flixel.FlxG.addChildBelowMouse(this);
 		#end
 
 		addEventListener(Event.ENTER_FRAME, update);
@@ -65,10 +61,10 @@ class HxCodec extends hxcodec.cpp.VlcBitmap
 	function update(_)
 	{
 		#if flixel
-		if (FlxG.sound.muted || FlxG.sound.volume <= 0)
+		if (flixel.FlxG.sound.muted || flixel.FlxG.sound.volume <= 0)
 			volume = 0;
 		else
-			volume = FlxG.sound.volume + 0.4;
+			volume = flixel.FlxG.sound.volume + 0.4;
 		#end
 	}
 
