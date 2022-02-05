@@ -19,6 +19,10 @@ WIP
 
 Play a video
 ```hx
+import hxcodec.HxCodec;
+
+...
+
 var video = new HxCodec();
 video.play("your/video/path.mp4");
 ```
