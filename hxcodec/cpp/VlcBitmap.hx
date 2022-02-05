@@ -39,7 +39,7 @@ import openfl.geom.Rectangle;
  * ...
  * @author Tommy S
  */
-@:cppFileCode('#include "LibVLC.cpp"')
+@:include("LibVLC.cpp")
 class VlcBitmap extends Bitmap
 {
 	/////////////////////////////////////////////////////////////////////////////////////
