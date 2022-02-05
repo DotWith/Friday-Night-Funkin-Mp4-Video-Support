@@ -10,19 +10,25 @@ import flixel.FlxG;
 
 class HxCodec extends hxCodec.cpp.VlcBitmap
 {
+	/**
+	 * As soon as the video has loaded.
+	 */
 	public var readyCallback:Void->Void;
+
+	/**
+	 * Used immediately when the video reaches last frame.
+	 */
 	public var finishCallback:Void->Void;
 
 	/**
 	 * Initializes the video (caching).
 	 * 
-	 * @param width 	WIP
-	 * @param height 	WIP
-	 * @param autoScale Remove
+	 * @param width 	The initial width position of the video.
+	 * @param height 	The initial height position of the video.
 	 */
-	public function new(width:Float = 320, height:Float = 240, autoScale:Bool = true)
+	public function new(?width:Float = 0, ?height:Float = 0)
 	{
-		super(width, height, autoScale);
+		super(width, height);
 
 		onVideoReady = onVLCVideoReady;
 		onComplete = skip;
@@ -95,20 +101,21 @@ class HxCodec extends hxCodec.cpp.VlcBitmap
 	/**
 	 * The path of the videos.
 	 * 
-	 * @param url Example: `your/video/path.mp4`
-	 * @param repeat Repeat the video.
+	 * @param url 		Example: `your/video/path.mp4`
+	 * @param repeat 	Repeat the video.
 	 */
-	/*public override function play(?url:String, ?repeat:Int = -1)
-		{
-			super.play(checkFile(url));
-
-			this.repeat = repeat;
-	}*/
 	public override function play(?source:String)
 	{
 		super.play(checkFile(source));
 	}
 
+	/**
+	 * Receives the file path. Doesn't work on HTML5.
+	 * 
+	 * @param fileName 	The path of the video.
+	 * @return 			Example `file:///C:/The/Path/To/The/Game/assets/videos/video.mp4`
+	 */
+	@:noCompletion
 	function checkFile(fileName:String):String
 	{
 		var pDir = "";

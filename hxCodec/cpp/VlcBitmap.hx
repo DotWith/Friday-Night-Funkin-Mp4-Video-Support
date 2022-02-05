@@ -78,20 +78,12 @@ class VlcBitmap extends Bitmap
 
 	/////////////////////////////////////////////////////////////////////////////////////
 
-	public function new(width:Float = 320, height:Float = 240, ?autoScale:Bool = true)
+	public function new(?width:Float = 0, ?height:Float = 0)
 	{
 		super(null, null, true);
 
-		if (autoScale)
-		{
-			this.width = getVideoWidth();
-			this.height = getVideoHeight();
-		}
-		else
-		{
-			this.width = width;
-			this.height = height;
-		}
+		this.width = width >= 0 ? getVideoWidth() : width;
+		this.height = height >= 0 ? getVideoHeight() : height;
 
 		init();
 	}
