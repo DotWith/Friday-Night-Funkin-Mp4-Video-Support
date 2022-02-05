@@ -94,9 +94,9 @@ class HxCodec extends hxcodec.cpp.VlcBitmap
 		dispose();
 
 		#if flixel
-		if (FlxG.game.contains(this))
+		if (flixel.FlxG.game.contains(this))
 		{
-			FlxG.game.removeChild(this);
+			flixel.FlxG.game.removeChild(this);
 
 			if (finishCallback != null)
 				finishCallback();
