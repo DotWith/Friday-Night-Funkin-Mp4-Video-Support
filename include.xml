@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-    <section if="cpp">
-        <assets path="include/" rename="" />
-    </section>
+    <assets path="${haxelib:hxcodec}/include/" rename="" if="cpp" />
 </project>
