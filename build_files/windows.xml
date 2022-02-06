@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="windows.xsd"?>
 <xml>
 	<set name='CPP_DIR' value='${haxelib:hxcodec}/vlc' />
 

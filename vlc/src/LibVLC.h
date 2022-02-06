@@ -1,7 +1,7 @@
 #ifndef LIBVLC_H
 #define LIBVLC_H
 
-#include "vlc/vlc.h"
+#include "../include/vlc/vlc.h"
 #include <mutex>
 
 struct libvlc_instance_t;
@@ -70,7 +70,7 @@ private:
 	void registerEvents();
 	int repeat;
 	int callbackIndex;
-	cpp::Function<Void(String)> vlcCallbackMth;
+	cpp::Function<Void(String)> vlcCallbackMth; // this causes 3 problems
 	// float vol = 1.0; -- why was this made??? wtf
 };
 

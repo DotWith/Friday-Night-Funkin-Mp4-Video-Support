@@ -20,7 +20,9 @@
  *****************************************************************************/
 
 #ifndef VLC_RAND_H
-# define VLC_RAND_H
+#define VLC_RAND_H
+
+#include "vlc_common.h"
 
 /**
  * \file

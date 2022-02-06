@@ -31,21 +31,24 @@
  */
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-typedef struct audio_volume audio_volume_t;
+#include "vlc_common.h"
 
-/**
- * Audio volume
- */
-struct audio_volume
-{
-    VLC_COMMON_MEMBERS
+    typedef struct audio_volume audio_volume_t;
 
-    vlc_fourcc_t format; /**< Audio samples format */
-    void (*amplify)(audio_volume_t *, block_t *, float); /**< Amplifier */
-};
+    /**
+     * Audio volume
+     */
+    struct audio_volume
+    {
+        VLC_COMMON_MEMBERS
+
+        vlc_fourcc_t format;                                 /**< Audio samples format */
+        void (*amplify)(audio_volume_t *, block_t *, float); /**< Amplifier */
+    };
 
 #ifdef __cplusplus
 }

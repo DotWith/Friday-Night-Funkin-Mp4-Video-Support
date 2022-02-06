@@ -194,9 +194,11 @@ class VlcBitmap extends Bitmap
 		libvlc.setRepeat(repeat);
 
 		// HW Acceleration is disabled, because it doesn't works so well (libVLC causes a crash)
-		/*@:privateAccess
-		var hwAcceleration = lime.app.Application.current.window.__attributes.context.hardware;
-		libvlc.useHWacceleration(hwAcceleration);*/
+		/*
+			@:privateAccess
+			var hwAcceleration = lime.app.Application.current.window.__attributes.context.hardware;
+			libvlc.useHWacceleration(hwAcceleration);
+		 */
 
 		if (source != null)
 			libvlc.play(source);

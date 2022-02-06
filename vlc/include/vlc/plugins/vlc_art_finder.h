@@ -21,6 +21,8 @@
 #ifndef VLC_ART_FINDER_H
 #define VLC_ART_FINDER_H 1
 
+#include "vlc_common.h"
+
 typedef struct art_finder_t
 {
     VLC_COMMON_MEMBERS
