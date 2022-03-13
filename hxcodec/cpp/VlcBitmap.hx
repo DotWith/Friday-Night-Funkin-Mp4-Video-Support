@@ -263,66 +263,66 @@ class VlcBitmap extends Bitmap
 
 	function checkFlags()
 	{
-		if (!isDisposed)
+		if (isDisposed)
+			return;
+
+		if (untyped __cpp__('libvlc->flags[1]') == 1)
 		{
-			if (untyped __cpp__('libvlc->flags[1]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[1]=-1');
-				statusOnPlaying();
-			}
-			if (untyped __cpp__('libvlc->flags[2]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[2]=-1');
-				statusOnPaused();
-			}
-			if (untyped __cpp__('libvlc->flags[3]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[3]=-1');
-				statusOnStopped();
-			}
-			if (untyped __cpp__('libvlc->flags[4]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[4]=-1');
-				statusOnEndReached();
-			}
-			if (untyped __cpp__('libvlc->flags[5]') != -1)
-			{
-				statusOnTimeChanged(untyped __cpp__('libvlc->flags[5]'));
-			}
-			if (untyped __cpp__('libvlc->flags[6]') != -1)
-			{
-				statusOnPositionChanged(untyped __cpp__('libvlc->flags[9]'));
-			}
-			if (untyped __cpp__('libvlc->flags[9]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[9]=-1');
-				statusOnError("File not found?");
-			}
-			if (untyped __cpp__('libvlc->flags[10]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[10]=-1');
-				statusOnSeekableChanged(0);
-			}
-			if (untyped __cpp__('libvlc->flags[11]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[11]=-1');
-				statusOnOpening();
-			}
-			if (untyped __cpp__('libvlc->flags[12]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[12]=-1');
-				statusOnBuffering();
-			}
-			if (untyped __cpp__('libvlc->flags[13]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[13]=-1');
-				statusOnForward();
-			}
-			if (untyped __cpp__('libvlc->flags[14]') == 1)
-			{
-				untyped __cpp__('libvlc->flags[14]=-1');
-				statusOnBackward();
-			}
+			untyped __cpp__('libvlc->flags[1]=-1');
+			statusOnPlaying();
+		}
+		if (untyped __cpp__('libvlc->flags[2]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[2]=-1');
+			statusOnPaused();
+		}
+		if (untyped __cpp__('libvlc->flags[3]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[3]=-1');
+			statusOnStopped();
+		}
+		if (untyped __cpp__('libvlc->flags[4]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[4]=-1');
+			statusOnEndReached();
+		}
+		if (untyped __cpp__('libvlc->flags[5]') != -1)
+		{
+			statusOnTimeChanged(untyped __cpp__('libvlc->flags[5]'));
+		}
+		if (untyped __cpp__('libvlc->flags[6]') != -1)
+		{
+			statusOnPositionChanged(untyped __cpp__('libvlc->flags[9]'));
+		}
+		if (untyped __cpp__('libvlc->flags[9]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[9]=-1');
+			statusOnError("File not found?");
+		}
+		if (untyped __cpp__('libvlc->flags[10]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[10]=-1');
+			statusOnSeekableChanged(0);
+		}
+		if (untyped __cpp__('libvlc->flags[11]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[11]=-1');
+			statusOnOpening();
+		}
+		if (untyped __cpp__('libvlc->flags[12]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[12]=-1');
+			statusOnBuffering();
+		}
+		if (untyped __cpp__('libvlc->flags[13]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[13]=-1');
+			statusOnForward();
+		}
+		if (untyped __cpp__('libvlc->flags[14]') == 1)
+		{
+			untyped __cpp__('libvlc->flags[14]=-1');
+			statusOnBackward();
 		}
 	}
 
