@@ -25,8 +25,6 @@
 #ifndef VLC_CHARSET_H
 #define VLC_CHARSET_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This files handles locale conversions in vlc

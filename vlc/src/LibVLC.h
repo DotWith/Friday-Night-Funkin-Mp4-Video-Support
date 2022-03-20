@@ -70,7 +70,7 @@ private:
 	void registerEvents();
 	int repeat;
 	int callbackIndex;
-	cpp::Function<Void(String)> vlcCallbackMth; // this causes 3 problems
+	cpp::Function<Void(String)> vlcCallbackMth;
 	// float vol = 1.0; -- why was this made??? wtf
 };
 

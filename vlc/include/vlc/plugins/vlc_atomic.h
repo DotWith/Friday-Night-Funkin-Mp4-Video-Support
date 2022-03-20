@@ -21,15 +21,6 @@
 #ifndef VLC_ATOMIC_H
 #define VLC_ATOMIC_H
 
-#include <stdio.h>
-#include "../libvlc_structures.h"
-#ifdef __APPLE__
-#include <machine/types.h>
-#elif defined(_WIN32)
-// idk the atomic operations
-#endif
-#include "vlc_threads.h"
-
 /**
  * \file
  * Atomic operations do not require locking, but they are not very powerful.
@@ -103,9 +94,6 @@ typedef uint_fast64_t atomic_uint_fast64_t;
 typedef intptr_t atomic_intptr_t;
 typedef uintptr_t atomic_uintptr_t;
 typedef size_t atomic_size_t;
-#ifdef __APPLE__
-typedef __darwin_ptrdiff_t ptrdiff_t;
-#endif
 typedef ptrdiff_t atomic_ptrdiff_t;
 typedef intmax_t atomic_intmax_t;
 typedef uintmax_t atomic_uintmax_t;

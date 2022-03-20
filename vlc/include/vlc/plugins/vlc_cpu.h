@@ -26,8 +26,6 @@
 #ifndef VLC_CPU_H
 #define VLC_CPU_H 1
 
-#include "vlc_common.h"
-
 VLC_API unsigned vlc_CPU(void);
 
 #if defined(__i386__) || defined(__x86_64__)

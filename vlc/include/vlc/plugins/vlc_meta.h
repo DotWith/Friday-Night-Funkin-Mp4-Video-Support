@@ -24,8 +24,6 @@
 #ifndef VLC_META_H
 #define VLC_META_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures for stream meta-data in vlc

@@ -37,9 +37,6 @@
 /*****************************************************************************
  * Prototypes
  *****************************************************************************/
-
-#include "vlc_common.h"
-
 VLC_API decoder_synchro_t *decoder_SynchroInit(decoder_t *, int) VLC_USED;
 VLC_API void decoder_SynchroRelease(decoder_synchro_t *);
 VLC_API void decoder_SynchroReset(decoder_synchro_t *);

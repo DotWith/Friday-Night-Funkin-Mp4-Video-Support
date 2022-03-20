@@ -14,8 +14,6 @@
  * expires on 2014-02-03
  */
 
-#include <stdint.h>
-
 static const uint8_t videolan_public_key_longid[8] = {
     0x71, 0x80, 0x71, 0x3B, 0xE5, 0x8D, 0x1A, 0xDC};
 

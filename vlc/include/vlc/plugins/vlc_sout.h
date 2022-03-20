@@ -39,7 +39,7 @@ extern "C"
 #endif
 
 #include <sys/types.h>
-#include "vlc_es.h"
+#include <vlc_es.h>
 
     /** Stream output instance (FIXME: should be private to src/ to avoid
      * invalid unsynchronized access) */

@@ -26,7 +26,7 @@
 #ifndef VLC_VOUT_OSD_H
 #define VLC_VOUT_OSD_H 1
 
-#include "vlc_spu.h"
+#include <vlc_spu.h>
 
 #ifdef __cplusplus
 extern "C"

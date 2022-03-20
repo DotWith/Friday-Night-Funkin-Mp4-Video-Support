@@ -33,7 +33,6 @@
  */
 
 #include <stdarg.h>
-#include "vlc_common.h"
 
 /**
  * \defgroup messages Messages

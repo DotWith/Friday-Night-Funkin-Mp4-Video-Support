@@ -24,7 +24,6 @@
  */
 
 #include <errno.h>
-#include "vlc_threads.h"
 
 #ifdef LIBVLC_USE_PTHREAD
 /**

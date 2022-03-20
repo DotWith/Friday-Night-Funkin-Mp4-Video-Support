@@ -31,8 +31,8 @@
  * This file defines subpicture structures and functions in vlc
  */
 
-#include "vlc_picture.h"
-#include "vlc_text_style.h"
+#include <vlc_picture.h>
+#include <vlc_text_style.h>
 
 /**
  * \defgroup subpicture Video Subpictures

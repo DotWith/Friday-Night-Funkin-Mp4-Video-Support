@@ -21,8 +21,6 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines the vlc_object_t structure and object types.

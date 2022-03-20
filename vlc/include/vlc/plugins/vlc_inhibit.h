@@ -26,8 +26,6 @@
 #ifndef VLC_INHIBIT_H
 #define VLC_INHIBIT_H 1
 
-#include "vlc_common.h"
-
 typedef struct vlc_inhibit vlc_inhibit_t;
 typedef struct vlc_inhibit_sys vlc_inhibit_sys_t;
 

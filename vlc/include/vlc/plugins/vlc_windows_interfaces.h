@@ -21,7 +21,6 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
-#ifdef _WIN32
 #ifndef MINGW_WORKAROUNDS_H
 #define MINGW_WORKAROUNDS_H
 
@@ -231,4 +230,3 @@ struct ITaskbarList3Vtbl
 #endif
 
 #endif // MINGW_WORKAROUNDS_H
-#endif

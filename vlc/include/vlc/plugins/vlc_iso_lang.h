@@ -22,8 +22,6 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures for iso639 language codes

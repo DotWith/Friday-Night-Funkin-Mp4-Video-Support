@@ -25,8 +25,6 @@
 #ifndef VLC_VARIABLES_H
 #define VLC_VARIABLES_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures for dynamic variables in vlc

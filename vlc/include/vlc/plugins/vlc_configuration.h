@@ -33,7 +33,6 @@
  */
 
 #include <sys/types.h> /* for ssize_t */
-#include "vlc_common.h"
 
 #ifdef __cplusplus
 extern "C"

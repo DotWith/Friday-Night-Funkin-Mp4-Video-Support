@@ -26,8 +26,6 @@
  * This file defines libvlc_int_t internal libvlc instance
  */
 
-#include "vlc_common.h"
-
 TYPEDEF_ARRAY(input_item_t *, input_item_array_t)
 
 struct hotkey;

@@ -25,8 +25,6 @@
 #ifndef VLC_TEXT_STYLE_H
 #define VLC_TEXT_STYLE_H 1
 
-#include "vlc_common.h"
-
 #ifdef __cplusplus
 extern "C"
 {

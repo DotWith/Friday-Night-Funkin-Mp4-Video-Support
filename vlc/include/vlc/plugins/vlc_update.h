@@ -25,8 +25,6 @@
 #ifndef VLC_UPDATE_H
 #define VLC_UPDATE_H
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines update API in vlc

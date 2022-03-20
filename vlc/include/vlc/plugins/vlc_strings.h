@@ -24,8 +24,6 @@
 #ifndef VLC_STRINGS_H
 #define VLC_STRINGS_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures handling misc strings

@@ -24,8 +24,6 @@
 #ifndef VLC_HTTPD_H
 #define VLC_HTTPD_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * HTTP/RTSP server API.

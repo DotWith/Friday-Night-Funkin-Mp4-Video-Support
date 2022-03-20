@@ -24,8 +24,6 @@
 #ifndef VLC_MD5_H
 #define VLC_MD5_H
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures to compute MD5 digests

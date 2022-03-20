@@ -24,10 +24,7 @@
 
 #ifndef VLC_HELP_H
 #define VLC_HELP_H 1
-
-#include "vlc_plugin.h"
-#include "vlc_common.h"
-#include "vlc_fixups.h"
+#include <vlc_plugin.h>
 
 /*
  *  First, we need help strings for the General Settings and for the

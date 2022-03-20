@@ -24,8 +24,6 @@
 #ifndef VLC_KEYS_H
 #define VLC_KEYS_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines keys and functions

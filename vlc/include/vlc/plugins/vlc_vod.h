@@ -24,8 +24,6 @@
 #ifndef VLC_VOD_H
 #define VLC_VOD_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines an interface for VOD server modules in vlc

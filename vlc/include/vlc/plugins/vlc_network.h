@@ -27,8 +27,6 @@
 #ifndef VLC_NETWORK_H
 #define VLC_NETWORK_H
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines interface to communicate with network plug-ins

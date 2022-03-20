@@ -24,8 +24,6 @@
 #ifndef VLC_EPG_H
 #define VLC_EPG_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures for storing dvb epg information

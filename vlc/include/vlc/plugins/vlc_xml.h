@@ -23,8 +23,6 @@
 #ifndef VLC_XML_H
 #define VLC_XML_H
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures to handle xml tags in vlc

@@ -24,7 +24,7 @@
 #ifndef VLC_ES_H
 #define VLC_ES_H 1
 
-#include "vlc_fourcc.h"
+#include <vlc_fourcc.h>
 
 /**
  * \file

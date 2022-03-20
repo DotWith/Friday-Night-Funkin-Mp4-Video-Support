@@ -25,8 +25,6 @@
 #ifndef VLC_URL_H
 #define VLC_URL_H
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions for manipulating URL in vlc

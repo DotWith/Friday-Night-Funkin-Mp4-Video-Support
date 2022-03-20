@@ -24,7 +24,7 @@
 #ifndef VLC_CODECS_H
 #define VLC_CODECS_H 1
 
-#include "vlc_fourcc.h"
+#include <vlc_fourcc.h>
 /**
  * \file
  * This file defines codec related structures needed by the demuxers and decoders
@@ -77,7 +77,8 @@ typedef struct
 #define _WAVEFORMATEXTENSIBLE_
 typedef struct
     ATTR_PACKED
-        _WAVEFORMATEXTENSIBLE {
+        _WAVEFORMATEXTENSIBLE
+{
     WAVEFORMATEX Format;
     union
     {

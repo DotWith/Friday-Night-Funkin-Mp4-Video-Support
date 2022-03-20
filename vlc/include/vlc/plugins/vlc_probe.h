@@ -22,7 +22,6 @@
 #define VLC_PROBE_H 1
 
 #include <stdlib.h>
-#include "vlc_common.h"
 
 /**
  * \file

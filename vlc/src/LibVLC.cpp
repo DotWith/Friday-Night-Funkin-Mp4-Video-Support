@@ -3,12 +3,7 @@
 #include <string>
 #include <stdint.h>
 #include "LibVLC.h"
-#ifdef _WIN32
 #include <windows.h>
-#elif defined(__APPLE__)
-// ?
-#endif
-// Other platforms need other libraries.
 
 using std::string;
 using namespace std;

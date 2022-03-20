@@ -35,8 +35,6 @@ extern "C"
 {
 #endif
 
-#include "vlc_common.h"
-
     typedef struct audio_volume audio_volume_t;
 
     /**

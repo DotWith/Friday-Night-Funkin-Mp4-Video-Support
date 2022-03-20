@@ -27,8 +27,6 @@
 #ifndef VLC_HTTP_H
 #define VLC_HTTP_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions, structures, enums and macros shared between

@@ -22,7 +22,6 @@
 #define VLC_DIALOG_H_
 
 #include <stdarg.h>
-#include "vlc_common.h"
 
 /**
  * \file vlc_dialog.h

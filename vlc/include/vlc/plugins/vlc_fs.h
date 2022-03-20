@@ -30,7 +30,6 @@
 
 #include <sys/types.h>
 #include <dirent.h>
-#include "vlc_common.h"
 
 VLC_API int vlc_open(const char *filename, int flags, ...) VLC_USED;
 VLC_API FILE *vlc_fopen(const char *filename, const char *mode) VLC_USED;

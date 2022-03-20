@@ -24,8 +24,6 @@
 #ifndef VLC_ES_OUT_H
 #define VLC_ES_OUT_H 1
 
-#include "vlc_common.h"
-
 /**
  * \file
  * This file defines functions and structures for handling es_out in stream output

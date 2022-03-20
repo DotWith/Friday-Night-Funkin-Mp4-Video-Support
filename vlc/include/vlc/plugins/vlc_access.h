@@ -29,8 +29,7 @@
  * This file defines functions and definitions for access object
  */
 
-#include "vlc_block.h"
-#include "vlc_common.h"
+#include <vlc_block.h>
 
 /**
  * \defgroup access Access

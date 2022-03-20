@@ -24,9 +24,6 @@
 #ifndef VLC_BITS_H
 #define VLC_BITS_H 1
 
-#include "../libvlc_structures.h"
-#include "vlc_threads.h"
-
 /**
  * \file
  * This file defines functions, structures for handling streams of bits in vlc

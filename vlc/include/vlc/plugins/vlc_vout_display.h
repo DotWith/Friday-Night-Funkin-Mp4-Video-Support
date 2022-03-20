@@ -29,13 +29,13 @@
  * This file defines vout display structures and functions in vlc
  */
 
-#include "vlc_es.h"
-#include "vlc_picture.h"
-#include "vlc_picture_pool.h"
-#include "vlc_subpicture.h"
-#include "vlc_keys.h"
-#include "vlc_mouse.h"
-#include "vlc_vout_window.h"
+#include <vlc_es.h>
+#include <vlc_picture.h>
+#include <vlc_picture_pool.h>
+#include <vlc_subpicture.h>
+#include <vlc_keys.h>
+#include <vlc_mouse.h>
+#include <vlc_vout_window.h>
 
 /* XXX
  * Do NOT use video_format_t::i_aspect but i_sar_num/den everywhere. i_aspect
