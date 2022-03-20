@@ -263,9 +263,7 @@ class VlcBitmap extends Bitmap
 
 	function checkFlags()
 	{
-		if (isDisposed)
-			return;
-		else
+		if (!isDisposed)
 		{
 			if (untyped __cpp__('libvlc->flags[1]') == 1)
 			{
