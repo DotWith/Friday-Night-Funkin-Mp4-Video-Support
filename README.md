@@ -21,7 +21,7 @@ HxCodec allows you to put MP4 videos in your project.
 ## Path
 In your xml path file, add this code.
 ```xml
-<assets path="${haxelib:hxcodec}/include" rename=''/>
+<haxelib name="hxcodec">
 ```
 
 ## Examples
@@ -30,6 +30,6 @@ Play a video
 import hxcodec.HxCodec;
 ```
 ```hx
-var video:HxCodec = new HxCodec();
+var video = new HxCodec();
 video.play("your/video/path.mp4");
 ```
