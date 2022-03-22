@@ -1,5 +1,5 @@
 {
-    "name": "hxcodec",
+    "name": "hxCodec",
     "url": "https://github.com/brightfyregit/Friday-Night-Funkin-Mp4-Video-Support/",
     "license": "MIT",
     "tags": [
@@ -7,7 +7,7 @@
         "video",
         "vlc"
     ],
-    "description": "Native video support for OpenFL.",
+    "description": "Native video support for OpenFL",
     "version": "1.0.0-alpha",
     "releasenote": "Initial release, everything is working correctly.",
     "contributors": [
@@ -15,7 +15,15 @@
         "datee",
         "BrightFyre",
         "GWebDev",
-        "CryBit"
+        "CryBit",
+        "DotWithATopHat",
+        "KadeDev",
+        "TheRealJake_12",
+        "deandimarzo",
+        "Jrgamer4u"
     ],
-    "dependencies": {}
+    "dependencies": {
+        "openfl": ""
+    },
+    "main": "hxcodec.HxCodec"
 }
