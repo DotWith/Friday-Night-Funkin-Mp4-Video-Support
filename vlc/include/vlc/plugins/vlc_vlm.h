@@ -30,7 +30,7 @@
  * This file defines VLM core functions and structures in vlc
  */
 
-#include <vlc_input.h>
+#include "vlc_input.h"
 
 /**
  * \defgroup server VLM

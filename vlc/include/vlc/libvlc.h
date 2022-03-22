@@ -64,7 +64,7 @@ extern "C"
 {
 #endif
 
-#include <vlc/libvlc_structures.h>
+#include "libvlc_structures.h"
 
     /** \defgroup libvlc_core LibVLC core
      * \ingroup libvlc

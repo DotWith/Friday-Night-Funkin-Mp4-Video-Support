@@ -27,7 +27,7 @@
  * This file defines Transport Layer Security API (TLS) in vlc
  */
 
-#include <vlc_network.h>
+#include "vlc_network.h"
 
 typedef struct vlc_tls vlc_tls_t;
 typedef struct vlc_tls_sys vlc_tls_sys_t;

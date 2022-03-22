@@ -29,7 +29,7 @@
  * This file defines functions and structures for image conversions in vlc
  */
 
-#include <vlc_vout.h>
+#include "vlc_vout.h"
 
 #ifdef __cplusplus
 extern "C"

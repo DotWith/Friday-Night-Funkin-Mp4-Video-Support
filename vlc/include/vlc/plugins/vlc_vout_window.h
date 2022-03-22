@@ -30,7 +30,7 @@
  * This file defines vout windows structures and functions in vlc
  */
 
-#include <vlc_common.h>
+#include "vlc_common.h"
 
 /* */
 typedef struct vout_window_t vout_window_t;

@@ -31,9 +31,9 @@
  * This file defines common video output structures and functions in vlc
  */
 
-#include <vlc_picture.h>
-#include <vlc_filter.h>
-#include <vlc_subpicture.h>
+#include "vlc_picture.h"
+#include "vlc_filter.h"
+#include "vlc_subpicture.h"
 
 /*****************************************************************************
  * Prototypes

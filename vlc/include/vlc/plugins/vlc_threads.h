@@ -422,6 +422,7 @@ struct vlc_cleanup_t
 
 #ifndef LIBVLC_USE_PTHREAD_CANCEL
 /* poll() with cancellation */
+#define poll(u, n, t) vlc_poll(u, n, t)
 #ifdef __OS2__
 int vlc_poll(struct pollfd *fds, unsigned nfds, int timeout);
 #else
@@ -442,8 +443,6 @@ static inline int vlc_poll(struct pollfd *fds, unsigned nfds, int timeout)
     return val;
 }
 #endif
-
-#define poll(u, n, t) vlc_poll(u, n, t)
 
 #endif /* LIBVLC_USE_PTHREAD_CANCEL */
 
